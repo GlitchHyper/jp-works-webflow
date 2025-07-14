@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import JPLogo from '@/components/ui/jp-logo';
 
 interface NavigationProps {
   currentSection?: string;
@@ -45,11 +46,7 @@ const Navigation = ({ currentSection }: NavigationProps) => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/6f3c0c3c-ffad-41df-bd8b-3be9f0de6d68.png" 
-              alt="JP Engineering Works Logo" 
-              className="h-12 w-auto"
-            />
+            <JPLogo className="h-12 w-auto" />
             <div>
               <h1 className="text-xl font-bold text-foreground">JP Engineering Works</h1>
               <p className="text-xs text-muted-foreground -mt-1">Precision In Every Task</p>

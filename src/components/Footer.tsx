@@ -8,6 +8,7 @@ import {
   Instagram,
   ArrowUp
 } from 'lucide-react';
+import JPLogo from '@/components/ui/jp-logo';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -64,11 +65,7 @@ const Footer = () => {
             {/* Company Information */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <img 
-                  src="/lovable-uploads/6f3c0c3c-ffad-41df-bd8b-3be9f0de6d68.png" 
-                  alt="JP Engineering Works Logo" 
-                  className="h-10 w-auto"
-                />
+                <JPLogo className="h-10 w-auto" />
                 <div>
                   <h3 className="text-xl font-bold">JP Engineering Works</h3>
                   <p className="text-sm text-gray-300 -mt-1">Precision In Every Task</p>

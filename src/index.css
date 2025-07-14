@@ -2,39 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* JP Engineering Works Design System - Professional Manufacturing Theme */
 
 @layer base {
   :root {
+    /* Core Background & Text */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 20% 15%;
 
+    /* Card Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 20% 15%;
 
+    /* Popover Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 20% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Professional Blue Primary */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 55%;
+    --primary-dark: 210 100% 35%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Professional Grey Secondary */
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 210 20% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted Elements */
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent Colors */
+    --accent: 210 15% 94%;
+    --accent-foreground: 210 20% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 120 60% 45%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Interactive Elements */
+    --border: 210 20% 88%;
+    --input: 210 20% 92%;
+    --ring: 210 100% 45%;
+
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(210 100% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(210 15% 96%), hsl(210 10% 92%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45% / 0.95), hsl(210 100% 35% / 0.95));
+
+    /* Professional Shadows */
+    --shadow-sm: 0 2px 8px hsl(210 20% 15% / 0.08);
+    --shadow-md: 0 4px 16px hsl(210 20% 15% / 0.12);
+    --shadow-lg: 0 8px 32px hsl(210 20% 15% / 0.16);
+    --shadow-blue: 0 8px 24px hsl(210 100% 45% / 0.25);
+
+    /* Smooth Transitions */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Professional Spacing */
+    --spacing-section: 5rem;
+    --spacing-container: 2rem;
 
     --radius: 0.5rem;
 
@@ -100,6 +131,111 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Professional Component Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-blue);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-accent border-2 border-border hover:border-primary/20;
+  }
+
+  .section-padding {
+    @apply py-20 px-4 md:px-6;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .card-professional {
+    @apply bg-card rounded-xl p-6 border border-border transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .card-professional:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .nav-link {
+    @apply relative text-foreground font-medium transition-colors duration-200 hover:text-primary;
+  }
+
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    content: '';
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-6;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-delay {
+    @apply opacity-0 translate-y-6;
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 0.2s;
+  }
+
+  .slide-in-left {
+    @apply opacity-0 -translate-x-6;
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .slide-in-right {
+    @apply opacity-0 translate-x-6;
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
 }

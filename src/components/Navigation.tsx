@@ -44,13 +44,15 @@ const Navigation = ({ currentSection }: NavigationProps) => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">JP</span>
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/lovable-uploads/6f3c0c3c-ffad-41df-bd8b-3be9f0de6d68.png" 
+              alt="JP Engineering Works Logo" 
+              className="h-12 w-auto"
+            />
             <div>
-              <h1 className="text-xl font-bold text-foreground">JP Engineering</h1>
-              <p className="text-xs text-muted-foreground -mt-1">Works</p>
+              <h1 className="text-xl font-bold text-foreground">JP Engineering Works</h1>
+              <p className="text-xs text-muted-foreground -mt-1">Precision In Every Task</p>
             </div>
           </div>
 

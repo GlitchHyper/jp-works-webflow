@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="text-white fade-in">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
               <Shield className="w-4 h-4 mr-2" />
-              Trusted Manufacturing Partner Since 2010
+              Precision In Every Task - Since 2010
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
@@ -42,7 +42,7 @@ const Hero = () => {
             
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
               JP Engineering Works delivers world-class manufacturing solutions with cutting-edge technology, 
-              uncompromising quality, and decades of expertise in precision engineering.
+              uncompromising quality, and precision in every task we undertake.
             </p>
 
             {/* CTA Buttons */}

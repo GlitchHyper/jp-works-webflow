@@ -67,7 +67,7 @@ const About = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             With over a decade of excellence in precision manufacturing, we have established ourselves 
-            as a trusted partner for businesses seeking quality, reliability, and innovation.
+            as a trusted partner delivering precision in every task for businesses seeking quality, reliability, and innovation.
           </p>
         </div>
 
